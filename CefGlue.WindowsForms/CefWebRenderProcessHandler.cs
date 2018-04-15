@@ -9,7 +9,7 @@ namespace Xilium.CefGlue.WindowsForms
 	{
 		private readonly CefWebBrowser _core;
 
-		public CefWebRenderProcessHandler(CefWebBrowser core)
+        public CefWebRenderProcessHandler(CefWebBrowser core)
 		{
 			_core = core;
 		}
@@ -40,7 +40,10 @@ namespace Xilium.CefGlue.WindowsForms
 
 			context.Enter();
 
-			
+            //可在這裡面改V8引擎載入的js物件
+            var window = context.GetGlobal();
+            var computerName = CefV8Value.CreateString(Environment.MachineName);
+            window.SetValue("computer_name", computerName, CefV8PropertyAttribute.DontDelete | CefV8PropertyAttribute.ReadOnly);
 
 			context.Exit();
 		}
