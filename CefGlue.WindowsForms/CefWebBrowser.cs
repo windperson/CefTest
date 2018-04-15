@@ -117,7 +117,16 @@
                 var client = CreateWebClient();
 
                 var settings = BrowserSettings;
-                if (settings == null) settings = new CefBrowserSettings { };
+                if (settings == null) settings = new CefBrowserSettings {
+                    FileAccessFromFileUrls = CefState.Enabled,
+                    JavaScript = CefState.Enabled,
+                    JavaScriptCloseWindows = CefState.Disabled,
+                    LocalStorage = CefState.Enabled,
+                    UniversalAccessFromFileUrls = CefState.Enabled,
+                    WebGL = CefState.Enabled,
+                    WebSecurity = CefState.Disabled
+                };
+               
 
                 CefBrowserHost.CreateBrowser(windowInfo, client, settings, StartUrl);
             }

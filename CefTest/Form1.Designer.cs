@@ -37,6 +37,7 @@
             this.cefWebBrowser1.Location = new System.Drawing.Point(13, 13);
             this.cefWebBrowser1.Name = "cefWebBrowser1";
             this.cefWebBrowser1.Size = new System.Drawing.Size(775, 425);
+            this.cefWebBrowser1.StartUrl = "file:///./Apps/index.html";
             this.cefWebBrowser1.TabIndex = 0;
             this.cefWebBrowser1.Text = "cefWebBrowser1";
             // 
